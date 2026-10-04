@@ -1,0 +1,44 @@
+{
+  "seed": {
+    "id": "rulebook-enterprise",
+    "displayName": "Enterprise",
+    "tagline": "Backend, auth and docs, plus migrations, conformance and an audit trail.",
+    "description": "A package: installs the Backend API, AuthN / AuthZ and Documentation add-ins, and adds an enterprise/ folder for regulated work: Postgres migration SQL between a live database and the next version (postgres-diff-migration, run on demand), the gold-answer-key conformance check, and audit-policy.json recording the retention period and audited tables the rulebook's AuditEvents table is expected to cover.",
+    "kind": "child",
+    "category": "full-stack",
+    "stack": "Postgres, Node, RLS, Markdown",
+    "requiresInput": "A magic-link tenant id and the rulebook's Security module",
+    "mountPath": "enterprise",
+    "requires": null,
+    "sortOrder": 260
+  },
+  "subSeeds": [
+    {
+      "seed": "rulebook-backend",
+      "mountPath": "backend"
+    },
+    {
+      "seed": "rulebook-auth",
+      "mountPath": "auth"
+    },
+    {
+      "seed": "rulebook-docs",
+      "mountPath": "docs"
+    }
+  ],
+  "replacements": [
+    {
+      "key": "retentionDays",
+      "label": "Audit retention (days)",
+      "description": "How long audit events are kept. 2555 days is seven years.",
+      "default": "2555"
+    },
+    {
+      "key": "auditedTables",
+      "label": "Audited tables",
+      "description": "Comma-separated rulebook tables whose changes must be written to the audit trail. Blank means every table.",
+      "default": "",
+      "required": false
+    }
+  ]
+}

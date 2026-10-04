@@ -1,0 +1,28 @@
+{
+  "SSoTmeProjectId": "0f81473d-d261-4b86-89dc-223a13f02096",
+  "Name": "rulebook-enterprise",
+  "Description": "Enterprise package: backend, auth and docs, plus schema migrations between versions and gold-answer-key conformance.",
+  "ProjectSettings": [],
+  "ProjectTranspilers": [
+    {
+      "IsSSoTTranspiler": false,
+      "Name": "rulebook-to-gold-answer-key",
+      "RelativePath": "/conformance",
+      "CommandLine": "rulebook-to-gold-answer-key -i ../../effortless-rulebook/effortless-rulebook.json -w 540000",
+      "IsDisabled": true,
+      "Description": "The conformance answer key: every derived value as computed by Postgres (disabled: the published tool cannot reach rulebook-to-postgres yet; enable once it can)"
+    },
+    {
+      "IsSSoTTranspiler": false,
+      "Name": "postgres-diff-migration",
+      "RelativePath": "/migrations",
+      "CommandLine": "postgres-diff-migration -p new_database=postgresql://postgres:postgres@localhost:5432/next -p live_database=postgresql://postgres:postgres@localhost:5432/live -w 540000",
+      "IsDisabled": true,
+      "Description": "Migration SQL from the live database to the new version (run on demand: effortless build -id)"
+    }
+  ],
+  "ShowHidden": false,
+  "ShowAllFiles": false,
+  "CurrentPath": null,
+  "SSoTmeProjectFiles": null
+}

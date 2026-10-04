@@ -1,0 +1,5 @@
+{
+  "retentionDays": "$retentionDays$",
+  "auditedTables": "$auditedTables$",
+  "auditEventsTable": "AuditEvents"
+}
