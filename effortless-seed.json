@@ -23,7 +23,7 @@
     },
     {
       "seed": "rulebook-docs",
-      "mountPath": "docs"
+      "mountPath": "reference"
     }
   ],
   "replacements": [

@@ -7,7 +7,7 @@ in order, each into its own folder:
 |---|---|
 | `rulebook-backend` (erb-seed-rulebook-backend) | `backend/` |
 | `rulebook-auth` (erb-seed-rulebook-auth) | `auth/` |
-| `rulebook-docs` (erb-seed-rulebook-docs) | `docs/` |
+| `rulebook-docs` (erb-seed-rulebook-docs) | `reference/` |
 
 and adds this folder, `enterprise/`, for the regulated parts. Like every
 add-in it has no rulebook of its own; it reads the project's
