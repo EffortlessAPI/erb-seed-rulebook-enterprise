@@ -18,7 +18,7 @@ add-in it has no rulebook of its own; it reads the project's
 | Path | From | What it is |
 |---|---|---|
 | `migrations/` | postgres-diff-migration | Migration SQL that takes the live database to the next version (Stripe's pg-schema-diff, with hazard warnings). **Disabled step, run on demand**: edit the two connection strings in `effortless.json` (`new_database` = a database built from the new rulebook, `live_database` = production), then `effortless build -id postgres-diff-migration`. Review `migration.sql` before applying it. |
-| `conformance/` | rulebook-to-gold-answer-key | The gold answer key: the rulebook with every derived value computed by Postgres, plus `blank-test.json`. Any other substrate (the TypeScript SDK, a Python port) must reproduce it. **Disabled by default** until the published tool can reach rulebook-to-postgres; then `effortless build -id rulebook-to-gold-answer-key`. |
+| `conformance/` | rulebook-to-gold-answer-key | The gold answer key: the rulebook with every derived value computed by Postgres, plus `blank-test.json`. Any other substrate (the TypeScript SDK, a Python port) must reproduce it. |
 | `audit-policy.json` | this seed (filled from your answers) | Retention period, the audited tables, and the name of the audit table |
 
 ## Audit trail

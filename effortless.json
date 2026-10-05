@@ -9,8 +9,8 @@
       "Name": "rulebook-to-gold-answer-key",
       "RelativePath": "/conformance",
       "CommandLine": "rulebook-to-gold-answer-key -i ../../effortless-rulebook/effortless-rulebook.json -w 540000",
-      "IsDisabled": true,
-      "Description": "The conformance answer key: every derived value as computed by Postgres (disabled: the published tool cannot reach rulebook-to-postgres yet; enable once it can)"
+      "IsDisabled": false,
+      "Description": "The conformance answer key: every derived value as computed by Postgres"
     },
     {
       "IsSSoTTranspiler": false,
